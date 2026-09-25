@@ -117,13 +117,12 @@ export default function HAbout() {
               development and SEO together under one roof.
             </p>
 
-            <Link
-              href="#contact"
-              className="about-contact-link"
-            >
-              <span>Discuss a project</span>
-              <span>↗</span>
-            </Link>
+            <a
+             href="https://wa.me/919654151216?text=Hello,%20I%20am%20looking%20to%20get%20a%20professional%20website%20developed%20for%20my%20business.%20I%20would%20like%20to%20discuss%20the%20project%20details,%20timeline,%20and%20pricing.%20Please%20connect%20with%20me."
+             target="_blank"
+             rel="noopener noreferrer"
+              className="about-contact-link">
+               <span>Discuss a project</span><span>↗</span></a>
           </div>
         </div>
 
@@ -193,18 +192,17 @@ export default function HAbout() {
                 {active.text}
               </p>
 
-              <Link
-                href="#contact"
-                className="detail-link"
-              >
-                <span>
-                  Explore this service
-                </span>
+             <Link
+               href="/services" 
+              className="detail-link">
+              <span>
+                Explore this service
+                  </span>
 
-                <span className="detail-link-icon">
+                 <span className="detail-link-icon">
                   ↗
-                </span>
-              </Link>
+                 </span>
+                </Link>
             </div>
 
             <div className="detail-footer">

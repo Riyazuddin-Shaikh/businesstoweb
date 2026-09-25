@@ -272,21 +272,8 @@ export default function Home() {
             </p>
 
             <div className="hero-links">
-              <Link
-                href="#contact"
-                className="hero-link"
-              >
-                <span>Start a conversation</span>
-                <Arrow />
-              </Link>
+             <Link href="/contact" className="hero-link"> <span>Start a conversation</span><Arrow /></Link>
 
-              <Link
-                href="#projects"
-                className="hero-link"
-              >
-                <span>Selected work</span>
-                <Arrow />
-              </Link>
             </div>
           </div>
         </div>

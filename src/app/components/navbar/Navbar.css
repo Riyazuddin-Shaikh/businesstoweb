@@ -510,7 +510,7 @@
     0 8px 0 18px;
 
   border: 1px solid #f4efe6;
-  border-radius: 999px; /* Restored pill button style */
+  border-radius: 1px; 
 
   background: #f4efe6;
 
@@ -541,7 +541,7 @@
   width: 34px;
   height: 34px;
 
-  border-radius: 50%; /* Restored circular icon style */
+  border-radius: 50%; 
 
   background: #0c1210;
 
@@ -569,9 +569,7 @@
 }
 
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+
 
 @media (max-width: 768px) {
 
@@ -702,9 +700,7 @@
 }
 
 
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
+
 
 @media (max-width: 380px) {
 
@@ -731,9 +727,6 @@
 }
 
 
-/* =========================================================
-   ANIMATIONS
-   ========================================================= */
 
 @keyframes drawerReveal {
   from {
