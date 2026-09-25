@@ -1,0 +1,430 @@
+.btw-services {
+  --btw-bg: #0b100e;
+  --btw-surface: #101713;
+  --btw-border: rgba(244, 239, 230, 0.12);
+  --btw-text: #f4efe6;
+  --btw-muted: #94a39b;
+  --btw-accent: #d9e2dc;
+
+  position: relative;
+  width: 100%;
+  padding: 120px 5vw 80px;
+  background: var(--btw-bg);
+  color: var(--btw-text);
+  overflow: hidden;
+  isolation: isolate;
+  box-sizing: border-box;
+}
+background thoda professional bana ke de do aisa hi kuch
+.btw-services *,
+.btw-services *::before,
+.btw-services *::after {
+  box-sizing: border-box;
+}
+
+.btw-services::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background: rgba(244, 239, 230, 0.035);
+  pointer-events: none;
+}
+
+.btw-service-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1500px;
+  margin: 0 auto 55px;
+}
+
+.btw-service-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--btw-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.btw-service-label-line {
+  width: 34px;
+  height: 1px;
+  background: var(--btw-muted);
+}
+
+.btw-service-count {
+  color: rgba(244, 239, 230, 0.38);
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.btw-service-intro {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 8vw;
+  max-width: 1500px;
+  margin: 0 auto 85px;
+}
+
+.btw-service-intro-title h2 {
+  margin: 0;
+  color: var(--btw-text);
+  font-size: clamp(36px, 5.2vw, 78px);
+  line-height: 0.98;
+  font-weight: 500;
+  letter-spacing: -2px;
+}
+
+.btw-service-intro-title em {
+  color: #77847d;
+  font-style: normal;
+}
+
+.btw-service-intro-copy {
+  align-self: end;
+  max-width: 430px;
+  padding-bottom: 5px;
+}
+
+.btw-service-intro-copy p {
+  margin: 0 0 25px;
+  color: #a8b2ac;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.btw-service-intro-copy span {
+  color: rgba(244, 239, 230, 0.4);
+  font-size: 10px;
+  letter-spacing: 1.4px;
+}
+
+.btw-service-list {
+  position: relative;
+  z-index: 2;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.btw-service-card {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr);
+  min-height: 430px;
+  margin-bottom: 24px;
+  background: var(--btw-surface);
+  border: 1px solid var(--btw-border);
+  overflow: hidden;
+  transition:
+    border-color 0.45s ease,
+    background-color 0.45s ease;
+}
+
+.btw-service-card:hover {
+  border-color: rgba(244, 239, 230, 0.28);
+  background: #121a15;
+}
+
+.btw-service-image {
+  position: relative;
+  min-height: 430px;
+  overflow: hidden;
+  background: #151c18;
+}
+
+.btw-service-image img {
+  object-fit: cover;
+  filter: saturate(0.72);
+  transition: filter 0.7s ease;
+}
+
+.btw-service-card:hover .btw-service-image img {
+  filter: saturate(0.95);
+}
+
+.btw-service-image-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(5, 8, 7, 0.1),
+    rgba(5, 8, 7, 0.58)
+  );
+}
+
+.btw-service-number,
+.btw-service-category {
+  position: absolute;
+  z-index: 3;
+  color: #f4efe6;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+}
+
+.btw-service-number {
+  top: 24px;
+  left: 24px;
+}
+
+.btw-service-category {
+  right: 24px;
+  bottom: 24px;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(5, 8, 7, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+.btw-service-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 55px clamp(24px, 5vw, 75px);
+  transition: transform 0.4s ease;
+}
+
+.btw-service-price {
+  display: block;
+  margin-bottom: 13px;
+  color: var(--btw-muted);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.btw-service-title-row h3 {
+  margin: 0;
+  color: var(--btw-text);
+  font-size: clamp(26px, 3vw, 48px);
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -1.2px;
+}
+
+.btw-service-description {
+  max-width: 570px;
+  margin: 24px 0 22px;
+  color: #9ca9a2;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.btw-service-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--btw-border);
+}
+
+.btw-service-meta span {
+  color: rgba(244, 239, 230, 0.58);
+  font-size: 11px;
+  letter-spacing: 0.7px;
+}
+
+.btw-service-meta span + span::before {
+  content: "/";
+  margin-right: 10px;
+  color: rgba(244, 239, 230, 0.2);
+}
+
+.btw-service-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.btw-service-view,
+.btw-service-contact,
+.btw-service-book {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.btw-service-view {
+  gap: 14px;
+  color: #0b100e;
+  background: var(--btw-text);
+  border: 1px solid var(--btw-text);
+}
+
+.btw-service-view span {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.btw-service-view:hover {
+  background: transparent;
+  color: var(--btw-text);
+}
+
+.btw-service-contact {
+  color: #b1bbb5;
+  border: 1px solid rgba(244, 239, 230, 0.14);
+  background: transparent;
+}
+
+.btw-service-contact:hover {
+  color: var(--btw-text);
+  border-color: rgba(244, 239, 230, 0.4);
+}
+
+.btw-service-book {
+  gap: 10px;
+  margin-left: auto;
+  color: var(--btw-text);
+  border-bottom: 1px solid rgba(244, 239, 230, 0.35);
+}
+
+.btw-service-book:hover {
+  color: #fff;
+  border-color: #fff;
+  transform: translateX(3px);
+}
+
+.btw-service-bottom {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 1500px;
+  margin: 50px auto 0;
+  color: rgba(244, 239, 230, 0.35);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.btw-service-bottom-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(244, 239, 230, 0.1);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .btw-services {
+    padding: 100px 4vw 70px;
+  }
+
+  .btw-service-intro {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+
+  .btw-service-card {
+    grid-template-columns: 1fr;
+  }
+
+  .btw-service-image {
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .btw-services {
+    padding: 80px 20px 50px;
+  }
+
+  .btw-service-header {
+    margin-bottom: 35px;
+  }
+
+  .btw-service-intro-title h2 {
+    font-size: clamp(34px, 7.5vw, 54px);
+    letter-spacing: -1.5px;
+  }
+
+  .btw-service-intro-copy p {
+    font-size: 14px;
+  }
+
+  .btw-service-details {
+    padding: 35px 24px;
+  }
+
+  .btw-service-title-row h3 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 580px) {
+  .btw-services {
+    padding: 70px 16px 40px;
+  }
+
+  .btw-service-intro-title h2 {
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
+
+  .btw-service-image {
+    min-height: 260px;
+  }
+
+  .btw-service-details {
+    padding: 28px 18px;
+  }
+
+  .btw-service-title-row h3 {
+    font-size: 24px;
+    letter-spacing: -0.8px;
+  }
+
+  .btw-service-description {
+    font-size: 13px;
+    margin: 18px 0;
+  }
+
+  .btw-service-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .btw-service-view,
+  .btw-service-contact {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btw-service-book {
+    grid-column: 1 / -1;
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+    border: 1px solid rgba(244, 239, 230, 0.2);
+    margin-top: 4px;
+  }
+
+  .btw-service-bottom {
+    display: none;
+  }
+}

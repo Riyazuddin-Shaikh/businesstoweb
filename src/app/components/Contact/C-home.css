@@ -1,0 +1,917 @@
+
+
+.contact-page {
+  --contact-bg: #0b100e;
+  --contact-surface: #111814;
+  --contact-surface-2: #151d18;
+
+  --contact-white: #f2eee5;
+  --contact-muted: #8e9891;
+  --contact-soft: #657069;
+
+  --contact-line: rgba(242, 238, 229, 0.12);
+  --contact-line-light: rgba(242, 238, 229, 0.2);
+
+  --contact-accent: #d8e5c5;
+
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 78% 12%,
+      rgba(122, 157, 124, 0.12),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 15% 42%,
+      rgba(196, 173, 124, 0.06),
+      transparent 24%
+    ),
+    linear-gradient(
+      135deg,
+      #080c0a 0%,
+      #0b100e 45%,
+      #101612 100%
+    );
+
+  color: var(--contact-white);
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+.contact-page *,
+.contact-page *::before,
+.contact-page *::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BACKGROUND DETAILS
+========================================================= */
+
+.contact-page::before {
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  top: 280px;
+  right: -300px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(216, 229, 197, 0.07);
+
+  box-shadow:
+    0 0 0 80px rgba(216, 229, 197, 0.015),
+    0 0 0 160px rgba(216, 229, 197, 0.01);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+
+.contact-page::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    black,
+    transparent 75%
+  );
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.contact-container {
+  width: min(1240px, calc(100% - 80px));
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.contact-hero {
+  position: relative;
+
+  padding: 42px 0 150px;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.contact-topbar {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 115px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  color: var(--contact-muted);
+}
+
+
+.contact-eyebrow {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  color: var(--contact-white);
+}
+
+
+.contact-eyebrow-line {
+  width: 34px;
+  height: 1px;
+
+  background: var(--contact-white);
+}
+
+
+.contact-index {
+  color: var(--contact-soft);
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.contact-heading-wrap {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    320px;
+
+  align-items: end;
+
+  gap: 80px;
+
+  margin-bottom: 95px;
+}
+
+
+.contact-heading-small {
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: var(--contact-muted);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+}
+
+
+.contact-heading h1 {
+  margin: 0;
+
+  color: var(--contact-white);
+
+  font-size: clamp(
+    72px,
+    9.5vw,
+    148px
+  );
+
+  line-height: 0.83;
+
+  letter-spacing: -0.075em;
+
+  font-weight: 800;
+}
+
+
+.contact-heading h1 span {
+  display: inline-block;
+
+  margin-left: 8vw;
+
+  color: transparent;
+
+  -webkit-text-stroke: 1.5px
+    rgba(242, 238, 229, 0.8);
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.contact-intro {
+  padding-bottom: 8px;
+}
+
+
+.contact-intro p {
+  max-width: 310px;
+
+  margin: 0 0 34px;
+
+  color: var(--contact-muted);
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+.contact-scroll-note {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  color: var(--contact-soft);
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+
+.contact-scroll-note span:first-child {
+  color: var(--contact-accent);
+}
+
+
+/* =========================================================
+   IMAGE AREA
+========================================================= */
+
+.contact-image-area {
+  position: relative;
+
+  margin-top: 10px;
+}
+
+
+.contact-image-wrapper {
+  position: relative;
+
+  width: 100%;
+  height: 620px;
+
+  overflow: hidden;
+
+  background: #151b17;
+
+  border:
+    1px solid
+    rgba(242, 238, 229, 0.1);
+}
+
+
+.contact-image {
+  object-fit: cover;
+
+  object-position: center;
+
+  filter:
+    saturate(0.65)
+    contrast(1.05)
+    brightness(0.75);
+
+  transform: scale(1.01);
+
+  transition:
+    transform 0.9s cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    ),
+    filter 0.9s ease;
+}
+
+
+.contact-image-wrapper:hover .contact-image {
+  transform: scale(1.045);
+
+  filter:
+    saturate(0.85)
+    contrast(1.05)
+    brightness(0.82);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.contact-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(7, 11, 9, 0.05) 0%,
+      rgba(7, 11, 9, 0.08) 35%,
+      rgba(7, 11, 9, 0.8) 100%
+    );
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   IMAGE LABEL
+========================================================= */
+
+.contact-image-label {
+  position: absolute;
+
+  left: 32px;
+  bottom: 28px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  color: var(--contact-white);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.17em;
+
+  z-index: 2;
+}
+
+
+.contact-image-label span:last-child {
+  color: rgba(
+    242,
+    238,
+    229,
+    0.45
+  );
+}
+
+
+/* =========================================================
+   IMAGE YEAR
+========================================================= */
+
+.contact-image-number {
+  position: absolute;
+
+  top: 28px;
+  right: 32px;
+
+  color: rgba(
+    242,
+    238,
+    229,
+    0.7
+  );
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   IMAGE CORNERS
+========================================================= */
+
+.contact-image-wrapper::before,
+.contact-image-wrapper::after {
+  content: "";
+
+  position: absolute;
+
+  width: 35px;
+  height: 35px;
+
+  z-index: 3;
+
+  pointer-events: none;
+}
+
+
+.contact-image-wrapper::before {
+  top: 22px;
+  left: 22px;
+
+  border-top: 1px solid
+    rgba(242, 238, 229, 0.45);
+
+  border-left: 1px solid
+    rgba(242, 238, 229, 0.45);
+}
+
+
+.contact-image-wrapper::after {
+  right: 22px;
+  bottom: 22px;
+
+  border-right: 1px solid
+    rgba(242, 238, 229, 0.45);
+
+  border-bottom: 1px solid
+    rgba(242, 238, 229, 0.45);
+}
+
+
+/* =========================================================
+   FLOATING STATUS CARD
+========================================================= */
+
+.contact-floating-card {
+  position: absolute;
+
+  right: 45px;
+  bottom: -38px;
+
+  min-width: 245px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 20px 23px;
+
+  background:
+    rgba(17, 24, 20, 0.94);
+
+  border:
+    1px solid
+    rgba(242, 238, 229, 0.12);
+
+  color: var(--contact-white);
+
+  box-shadow:
+    0 20px 70px
+    rgba(0, 0, 0, 0.35);
+
+  backdrop-filter: blur(16px);
+
+  z-index: 5;
+}
+
+
+.floating-dot {
+  width: 8px;
+  height: 8px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--contact-accent);
+
+  box-shadow:
+    0 0 0 5px
+    rgba(216, 229, 197, 0.08);
+}
+
+
+.contact-floating-card div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.contact-floating-card small {
+  color: var(--contact-soft);
+
+  font-size: 7px;
+  font-weight: 700;
+
+  letter-spacing: 0.17em;
+}
+
+
+.contact-floating-card strong {
+  color: var(--contact-white);
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   COMPANY INTRO
+========================================================= */
+
+.contact-company-intro {
+  display: grid;
+
+  grid-template-columns: 180px minmax(0, 1fr);
+
+  gap: 100px;
+
+  padding: 175px 0 30px;
+
+  border-bottom:
+    1px solid var(--contact-line);
+}
+
+
+.company-intro-label {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  color: var(--contact-soft);
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+}
+
+
+.company-intro-label span:first-child {
+  color: var(--contact-accent);
+}
+
+
+.company-intro-content {
+  max-width: 850px;
+}
+
+
+.company-intro-content h2 {
+  margin: 0 0 42px;
+
+  color: var(--contact-white);
+
+  font-size: clamp(
+    45px,
+    5.4vw,
+    78px
+  );
+
+  line-height: 0.95;
+
+  letter-spacing: -0.065em;
+}
+
+
+.company-intro-content h2 span {
+  color: #69746d;
+}
+
+
+.company-intro-content p {
+  max-width: 680px;
+
+  margin: 0 0 22px;
+
+  color: var(--contact-muted);
+
+  font-size: 14px;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .contact-container {
+    width: min(
+      calc(100% - 48px),
+      800px
+    );
+  }
+
+
+  .contact-topbar {
+    margin-bottom: 80px;
+  }
+
+
+  .contact-heading-wrap {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+
+  .contact-intro {
+    margin-left: auto;
+
+    max-width: 420px;
+  }
+
+
+  .contact-image-wrapper {
+    height: 500px;
+  }
+
+
+  .contact-company-intro {
+    grid-template-columns:
+      120px
+      1fr;
+
+    gap: 60px;
+
+    padding-top: 135px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .contact-container {
+    width: calc(100% - 36px);
+  }
+
+
+  .contact-hero {
+    padding:
+      28px
+      0
+      100px;
+  }
+
+
+  .contact-topbar {
+    margin-bottom: 70px;
+  }
+
+
+  .contact-index {
+    display: none;
+  }
+
+
+  .contact-heading-small {
+    margin-bottom: 16px;
+
+    font-size: 8px;
+  }
+
+
+  .contact-heading h1 {
+    font-size:
+      clamp(
+        55px,
+        15.5vw,
+        88px
+      );
+
+    line-height: 0.86;
+  }
+
+
+  .contact-heading h1 span {
+    margin-left: 6vw;
+
+    -webkit-text-stroke: 1px
+      rgba(242, 238, 229, 0.8);
+  }
+
+
+  .contact-intro {
+    margin-left: 0;
+  }
+
+
+  .contact-intro p {
+    max-width: 360px;
+
+    font-size: 13px;
+  }
+
+
+  .contact-scroll-note {
+    display: none;
+  }
+
+
+  /* Image */
+
+  .contact-image-area {
+    margin-top: 30px;
+  }
+
+
+  .contact-image-wrapper {
+    height: 420px;
+  }
+
+
+  .contact-image-label {
+    left: 20px;
+    bottom: 20px;
+
+    font-size: 7px;
+  }
+
+
+  .contact-image-number {
+    top: 20px;
+    right: 20px;
+  }
+
+
+  .contact-image-wrapper::before {
+    top: 15px;
+    left: 15px;
+  }
+
+
+  .contact-image-wrapper::after {
+    right: 15px;
+    bottom: 15px;
+  }
+
+
+  /* Floating card */
+
+  .contact-floating-card {
+    right: 12px;
+    bottom: -34px;
+
+    min-width: auto;
+
+    padding:
+      16px
+      17px;
+  }
+
+
+  .contact-floating-card strong {
+    font-size: 10px;
+  }
+
+
+  /* Company */
+
+  .contact-company-intro {
+    display: block;
+
+    padding:
+      110px
+      0
+      10px;
+  }
+
+
+  .company-intro-label {
+    flex-direction: row;
+
+    margin-bottom: 34px;
+  }
+
+
+  .company-intro-content h2 {
+    margin-bottom: 30px;
+
+    font-size: 46px;
+  }
+
+
+  .company-intro-content p {
+    font-size: 13px;
+
+    line-height: 1.8;
+  }
+
+
+  /* Background */
+
+  .contact-page::before {
+    width: 350px;
+    height: 350px;
+
+    right: -230px;
+  }
+
+
+  .contact-page::after {
+    background-size: 55px 55px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .contact-heading h1 {
+    font-size: 55px;
+  }
+
+
+  .contact-image-wrapper {
+    height: 360px;
+  }
+
+
+  .contact-floating-card {
+    right: 6px;
+  }
+
+
+  .company-intro-content h2 {
+    font-size: 40px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .contact-page *,
+  .contact-page *::before,
+  .contact-page *::after {
+    transition: none !important;
+
+    animation: none !important;
+  }
+
+}
+

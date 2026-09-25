@@ -1,0 +1,406 @@
+/* =========================================================
+   BUSINESS TOWEB — BACK TO TOP
+   ========================================================= */
+
+.btw-backtop {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 9999;
+
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid rgba(244, 239, 230, 0.16);
+  border-radius: 50%;
+
+  background: rgba(11, 16, 14, 0.9);
+  color: #f4efe6;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  cursor: pointer;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition:
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* =========================================================
+   OUTER RING
+   ========================================================= */
+
+.btw-backtop::before {
+  content: "";
+
+  position: absolute;
+  inset: 5px;
+
+  border: 1px solid rgba(194, 181, 255, 0.12);
+  border-radius: 50%;
+
+  transition:
+    border-color 0.35s ease,
+    transform 0.45s ease;
+}
+
+
+/* =========================================================
+   WORKSHOP ICON
+   Simple CSS tool / workshop mark
+   ========================================================= */
+
+.btw-workshop-icon {
+  position: absolute;
+  top: 13px;
+
+  width: 18px;
+  height: 18px;
+
+  color: #c2b5ff;
+
+  transform: rotate(-42deg);
+
+  transition:
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.35s ease;
+}
+
+
+/* Tool handle */
+
+.btw-tool-handle {
+  position: absolute;
+
+  left: 8px;
+  top: 6px;
+
+  width: 2px;
+  height: 12px;
+
+  border-radius: 2px;
+
+  background: currentColor;
+}
+
+
+/* Tool head */
+
+.btw-tool-head {
+  position: absolute;
+
+  left: 3px;
+  top: 1px;
+
+  width: 11px;
+  height: 6px;
+
+  border: 1px solid currentColor;
+  border-radius: 2px;
+
+  background: transparent;
+}
+
+
+/* =========================================================
+   ARROW
+   ========================================================= */
+
+.btw-top-arrow {
+  position: absolute;
+
+  top: 32px;
+
+  width: 19px;
+  height: 19px;
+
+  color: rgba(244, 239, 230, 0.72);
+
+  transition:
+    color 0.35s ease,
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* Vertical line */
+
+.btw-arrow-line {
+  position: absolute;
+
+  left: 9px;
+  top: 5px;
+
+  width: 1px;
+  height: 12px;
+
+  background: currentColor;
+
+  transform-origin: top;
+}
+
+
+/* Left chevron */
+
+.btw-arrow-left {
+  position: absolute;
+
+  left: 4px;
+  top: 5px;
+
+  width: 8px;
+  height: 8px;
+
+  border-left: 1px solid currentColor;
+  border-top: 1px solid currentColor;
+
+  transform: rotate(45deg);
+}
+
+
+/* Right chevron */
+
+.btw-arrow-right {
+  position: absolute;
+
+  right: 4px;
+  top: 5px;
+
+  width: 8px;
+  height: 8px;
+
+  border-right: 1px solid currentColor;
+  border-top: 1px solid currentColor;
+
+  transform: rotate(-45deg);
+}
+
+
+/* =========================================================
+   TOP LABEL
+   ========================================================= */
+
+.btw-top-label {
+  position: absolute;
+
+  bottom: 7px;
+
+  color: rgba(244, 239, 230, 0.25);
+
+  font-size: 5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+
+  opacity: 0;
+
+  transform: translateY(3px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.btw-backtop:hover {
+  border-color: rgba(194, 181, 255, 0.4);
+
+  background: rgba(15, 21, 18, 0.97);
+
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.3),
+    0 0 28px rgba(194, 181, 255, 0.06);
+}
+
+
+.btw-backtop:hover::before {
+  border-color: rgba(194, 181, 255, 0.2);
+  transform: scale(0.94);
+}
+
+
+.btw-backtop:hover .btw-workshop-icon {
+  color: #d2caff;
+
+  transform:
+    rotate(-42deg)
+    translateY(-3px);
+}
+
+
+.btw-backtop:hover .btw-top-arrow {
+  color: #c2b5ff;
+
+  transform: translateY(-3px);
+}
+
+
+.btw-backtop:hover .btw-top-label {
+  opacity: 1;
+  transform: translateY(0);
+
+  color: rgba(244, 239, 230, 0.5);
+}
+
+
+/* =========================================================
+   ACTIVE
+   ========================================================= */
+
+.btw-backtop:active {
+  transform: scale(0.94);
+}
+
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+.btw-backtop:focus-visible {
+  outline: 1px solid #c2b5ff;
+  outline-offset: 6px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .btw-backtop {
+    right: 20px;
+    bottom: 20px;
+
+    width: 56px;
+    height: 56px;
+  }
+
+  .btw-workshop-icon {
+    top: 11px;
+  }
+
+  .btw-top-arrow {
+    top: 29px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .btw-backtop {
+    right: 15px;
+    bottom: 17px;
+
+    width: 51px;
+    height: 51px;
+  }
+
+  .btw-backtop::before {
+    inset: 4px;
+  }
+
+  .btw-workshop-icon {
+    top: 9px;
+
+    width: 16px;
+    height: 16px;
+  }
+
+  .btw-tool-handle {
+    left: 7px;
+    top: 6px;
+
+    height: 10px;
+  }
+
+  .btw-tool-head {
+    left: 2px;
+    top: 1px;
+
+    width: 10px;
+    height: 5px;
+  }
+
+  .btw-top-arrow {
+    top: 25px;
+
+    width: 17px;
+    height: 17px;
+  }
+
+  .btw-arrow-line {
+    left: 8px;
+    height: 11px;
+  }
+
+  .btw-arrow-left {
+    left: 3px;
+  }
+
+  .btw-arrow-right {
+    right: 3px;
+  }
+
+  .btw-top-label {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   TOUCH
+   ========================================================= */
+
+@media (hover: none) {
+  .btw-backtop:hover {
+    border-color: rgba(244, 239, 230, 0.16);
+    background: rgba(11, 16, 14, 0.9);
+    box-shadow: none;
+  }
+
+  .btw-backtop:hover::before {
+    border-color: rgba(194, 181, 255, 0.12);
+    transform: none;
+  }
+
+  .btw-backtop:hover .btw-workshop-icon {
+    color: #c2b5ff;
+    transform: rotate(-42deg);
+  }
+
+  .btw-backtop:hover .btw-top-arrow {
+    color: rgba(244, 239, 230, 0.72);
+    transform: none;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .btw-backtop,
+  .btw-backtop *,
+  .btw-backtop::before {
+    transition: none !important;
+  }
+}
