@@ -133,10 +133,15 @@ export default function FAQ() {
 
             <div className="btw-faq-contact-box">
               <span>Have a specific project in mind?</span>
-              <a href="#contact" className="btw-faq-action-link">
-                <span>Start a Conversation</span>
-                <span className="arrow">↗</span>
-              </a>
+             <a
+  href="https://wa.me/919654151216?text=Hello,%20I%20am%20looking%20to%20get%20a%20professional%20website%20developed%20for%20my%20business.%20I%20would%20like%20to%20discuss%20the%20project%20details,%20timeline,%20and%20pricing.%20Please%20connect%20with%20me."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btw-faq-action-link"
+>
+  <span>Start a Conversation</span>
+  <span className="arrow">↗</span>
+</a>
             </div>
           </div>
 

@@ -494,6 +494,8 @@
   font-weight: 400;
 }
 
+
+
 @media (max-width: 1050px) {
   .btw-process-container {
     width: 88vw;
@@ -622,38 +624,23 @@
   }
 }
 
-
-
+/* Touch/Mobile Click & Hover Fix */
 @media (hover: none) {
-  .btw-process-card:hover {
-    transform: none;
-    border-color: var(--process-line);
-    background-color: var(--process-panel);
+  /* Jab mobile par card par click/tap karenge toh image show hogi */
+  .btw-process-card.is-active-mobile .btw-process-card-image {
+    opacity: 0.45 !important;
+    transform: scale(1) !important;
   }
 
-  .btw-process-card:hover .btw-process-card-image {
-    opacity: 0;
-    transform: scale(1.08);
+  .btw-process-card.is-active-mobile .btw-process-card-overlay {
+    opacity: 1 !important;
   }
 
-  .btw-process-card:hover .btw-process-card-overlay {
-    opacity: 0;
+  .btw-process-card.is-active-mobile .btw-process-card-body h3 {
+    color: var(--process-white, #fff);
   }
 
-  .btw-process-card:hover::after {
-    opacity: 0;
-  }
-
-  .btw-process-card:hover .btw-process-card-body h3 {
-    color: var(--process-white);
-    transform: none;
-  }
-
-  .btw-process-card:hover .btw-process-card-body p {
-    color: var(--process-muted);
-  }
-
-  .btw-process-card:hover .btw-process-card-arrow {
-    transform: none;
+  .btw-process-card.is-active-mobile .btw-process-card-body p {
+    color: var(--process-muted, #b8c4bc);
   }
 }

@@ -8,6 +8,7 @@ import Navbar from "@/app/components/navbar/Navbar";
 import Footer from "@/app/components/Footer/footer";
 import BackToTop from "@/app/components/BackToTop/BackToTop";
 import ScrollHandler from "@/app/components/ScrollHandler"; 
+import ContactPopup from "@/app/components/Popup/ContactPopup"; // <-- Sahi path
 // ==================== GLOBAL COMPONENTS IMPORT END ====================
 
 const geistSans = Geist({
@@ -55,6 +56,9 @@ export default function RootLayout({ children }) {
 
         {/* Scroll to Top Button */}
         <BackToTop />
+
+        {/* Website load hone ke 15 seconds baad aane wala Contact Popup */}
+        <ContactPopup />
 
         {/* ==================== LAYOUT UI & COMPONENTS END ==================== */}
       </body>

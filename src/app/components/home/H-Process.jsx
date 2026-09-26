@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./H-Process.css";
@@ -50,6 +50,7 @@ const PROCESS = [
 
 export default function OurProcess() {
   const sectionRef = useRef(null);
+  const [activeCard, setActiveCard] = useState(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -74,7 +75,6 @@ export default function OurProcess() {
         return;
       }
 
-      // Professional Scroll Timeline Animation
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
@@ -130,6 +130,13 @@ export default function OurProcess() {
     return () => ctx.revert();
   }, []);
 
+  // Handle click/tap for mobile devices
+  const handleCardClick = (index) => {
+    if (window.innerWidth <= 1050) {
+      setActiveCard(activeCard === index ? null : index);
+    }
+  };
+
   return (
     <section ref={sectionRef} className="btw-process" id="process">
       <div className="btw-process-glow btw-process-glow-one" />
@@ -174,8 +181,11 @@ export default function OurProcess() {
           <div className="btw-process-cards">
             {PROCESS.map((item, index) => (
               <article
-                className={`btw-process-card btw-process-card-${index + 1}`}
+                className={`btw-process-card btw-process-card-${index + 1} ${
+                  activeCard === index ? "is-active-mobile" : ""
+                }`}
                 key={item.number}
+                onClick={() => handleCardClick(index)}
               >
                 {/* HOVER IMAGE */}
                 <div
