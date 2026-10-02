@@ -1,0 +1,151 @@
+/* ==========================================
+   PROJECTS & PROCESS SECTIONS CSS
+   ========================================== */
+
+.btw-projects-section,
+.btw-process-section {
+  background-color: var(--bg-color, #050706);
+  color: var(--text-main, #f3efe6);
+  padding: 120px 4vw;
+  border-bottom: 1px solid var(--border-color, rgba(243, 239, 230, 0.1));
+}
+
+.btw-section-header {
+  margin-bottom: 60px;
+}
+
+.btw-section-header .spec-label {
+  display: block;
+  font-size: 11px;
+  font-family: monospace;
+  color: var(--text-muted, #8c9690);
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.btw-section-header h2 {
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin: 0;
+}
+
+.btw-section-header h2 span {
+  font-style: italic;
+  color: var(--text-muted, #8c9690);
+  font-weight: 300;
+}
+
+/* Projects Grid */
+.btw-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+@media (max-width: 900px) {
+  .btw-projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.btw-project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.btw-project-img-box {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  background: #0d1210;
+  border: 1px solid var(--border-color, rgba(243, 239, 230, 0.1));
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .btw-project-img-box {
+    height: 300px;
+  }
+}
+
+.btw-proj-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(30%) contrast(1.05);
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btw-project-card:hover .btw-proj-img {
+  transform: scale(1.04);
+}
+
+.btw-proj-tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(5, 7, 6, 0.85);
+  border: 1px solid var(--border-color, rgba(243, 239, 230, 0.15));
+  padding: 6px 12px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-family: monospace;
+  z-index: 2;
+  color: var(--text-main, #f3efe6);
+}
+
+.btw-project-info h3 {
+  font-size: 22px;
+  font-weight: 400;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.btw-project-info p {
+  font-size: 14px;
+  color: var(--text-muted, #8c9690);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Process Grid */
+.btw-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  border-top: 1px solid var(--border-color, rgba(243, 239, 230, 0.1));
+  padding-top: 50px;
+}
+
+@media (max-width: 900px) {
+  .btw-process-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+}
+
+.btw-process-col .process-num {
+  font-size: 32px;
+  font-weight: 300;
+  font-family: monospace;
+  color: var(--text-muted, #8c9690);
+  display: block;
+  margin-bottom: 16px;
+}
+
+.btw-process-col h4 {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.5px;
+}
+
+.btw-process-col p {
+  font-size: 14px;
+  color: var(--text-muted, #8c9690);
+  line-height: 1.65;
+  margin: 0;
+}

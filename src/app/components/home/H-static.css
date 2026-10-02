@@ -1,0 +1,181 @@
+.btw-static-section {
+  --btw-bg: #0b100e;
+  --btw-border: rgba(244, 239, 230, 0.12);
+  --btw-border-hover: rgba(244, 239, 230, 0.3);
+  --btw-text: #f4efe6;
+  --btw-muted: #94a39b;
+
+  position: relative;
+  width: 100%;
+  padding: 140px 5vw;
+  background-color: var(--btw-bg);
+  color: var(--btw-text);
+  overflow: hidden;
+  font-family: inherit;
+}
+
+/* Fixed Parallax Background Image */
+.btw-static-bg-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: url("https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=2000&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Fixed Parallax Effect */
+}
+
+/* Dark Gradient Overlay for Readability */
+.btw-static-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 16, 14, 0.95) 0%,
+    rgba(11, 16, 14, 0.88) 50%,
+    rgba(11, 16, 14, 0.95) 100%
+  );
+}
+
+.btw-static-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.btw-static-header {
+  max-width: 750px;
+  margin-bottom: 70px;
+}
+
+.btw-static-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--btw-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.badge-line {
+  width: 30px;
+  height: 1px;
+  background: var(--btw-muted);
+}
+
+.btw-static-title {
+  margin: 0 0 20px 0;
+  color: var(--btw-text);
+  font-size: clamp(38px, 4.8vw, 68px);
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -2.5px;
+}
+
+.btw-static-title em {
+  color: #77847d;
+  font-style: normal;
+}
+
+.btw-static-desc {
+  margin: 0;
+  color: #9ca9a2;
+  font-size: 16px;
+  line-height: 1.75;
+  max-width: 600px;
+}
+
+/* Stats 4-Column Grid */
+.btw-static-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .btw-static-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .btw-static-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.btw-static-card {
+  position: relative;
+  background: rgba(16, 23, 19, 0.82);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--btw-border);
+  border-radius: 0px; /* Sharp agency edges */
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+}
+
+.btw-static-card:hover {
+  background: rgba(20, 28, 24, 0.92);
+  border-color: var(--btw-border-hover);
+  transform: translateY(-4px);
+}
+
+.card-top-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(244, 239, 230, 0.25), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.btw-static-card:hover .card-top-line {
+  opacity: 1;
+}
+
+.btw-static-num {
+  color: var(--btw-text);
+  font-size: clamp(44px, 4vw, 56px);
+  font-weight: 500;
+  letter-spacing: -2px;
+  line-height: 1;
+  margin-bottom: 16px;
+  font-family: monospace;
+}
+
+.btw-static-label {
+  color: var(--btw-text);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+
+.btw-static-sub {
+  color: rgba(244, 239, 230, 0.4);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .btw-static-section {
+    padding: 90px 20px;
+  }
+  .btw-static-card {
+    padding: 30px 24px;
+  }
+}

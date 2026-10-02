@@ -1,0 +1,123 @@
+.cta-section {
+  --deep: #0b100e;
+  --surface-cta: #0d1411; /* Baaki sections se alag ek subtle rich tone */
+  --white: #f2eee5;
+  --muted-dark: #69736c;
+  --accent: #d8e5c5;
+  --line: rgba(242, 238, 229, 0.12);
+
+  padding: 120px 0;
+  /* Ek distinct background aur top/bottom separator line taaki mixing khatam ho jaye */
+  background: radial-gradient(circle at 50% 50%, rgba(216, 229, 197, 0.04) 0%, transparent 65%), var(--surface-cta);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.cta-section *,
+.cta-section *::before,
+.cta-section *::after {
+  box-sizing: border-box;
+}
+
+.cta-container {
+  width: min(1240px, calc(100% - 80px));
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Scroll Animation */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-item.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cta-kicker {
+  display: block;
+  margin-bottom: 30px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--muted-dark);
+  text-transform: uppercase;
+}
+
+.cta-title {
+  margin: 0 0 50px;
+  font-size: clamp(45px, 6.5vw, 95px);
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+  color: var(--white);
+}
+
+/* Outlined Text Style for contrast */
+.cta-title .outline-text {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(242, 238, 229, 0.85);
+}
+
+.cta-action {
+  display: flex;
+  justify-content: center;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--accent);
+  color: #101510;
+  padding: 12px 36px;
+  border-radius: 1px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+  background: #e6eed7;
+}
+
+.cta-arrow {
+  width: 32px;
+  height: 32px;
+  background: #101510;
+  color: var(--accent);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.cta-btn:hover .cta-arrow {
+  transform: rotate(45deg);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 700px) {
+  .cta-section {
+    padding: 90px 0;
+  }
+  .cta-title {
+    font-size: 38px;
+  }
+  .cta-btn {
+    padding: 14px 24px;
+    font-size: 12px;
+  }
+}

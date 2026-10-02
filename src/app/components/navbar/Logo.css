@@ -1,0 +1,33 @@
+.brand-logo-wrapper {
+  display: flex;
+  align-items: center;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.real-logo-image-container {
+  width: 180px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.brand-logo-wrapper:hover .real-logo-image-container {
+  transform: scale(1.05);
+}
+
+.logo-img-file {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .real-logo-image-container {
+    width: 130px;
+    height: 45px;
+  }
+}

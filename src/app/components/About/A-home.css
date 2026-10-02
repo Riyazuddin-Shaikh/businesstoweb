@@ -1,0 +1,199 @@
+.btw-about-banner {
+  --bg-color: #050706;
+  --text-main: #f3efe6;
+  --text-muted: #8c9690;
+  --border-color: rgba(243, 239, 230, 0.1);
+  --accent: #c2c9c4;
+
+  position: relative;
+  width: 100%;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  padding: 140px 4vw 100px 4vw;
+  font-family: inherit;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.btw-container {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/* Top Meta Status Bar */
+.btw-top-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 50px;
+}
+
+.btw-studio-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #22c55e;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+/* Massive Editorial Hero Grid */
+.btw-hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: flex-end;
+  margin-bottom: 70px;
+}
+
+@media (max-width: 1024px) {
+  .btw-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+.btw-main-title {
+  font-size: clamp(42px, 6vw, 86px);
+  font-weight: 300;
+  line-height: 1.02;
+  letter-spacing: -2.5px;
+  margin: 0;
+}
+
+.btw-main-title span {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text-muted);
+}
+
+.btw-lead-text {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin: 0;
+  max-width: 520px;
+}
+
+.btw-lead-text strong {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+/* Cinematic Studio Image Frame */
+.btw-studio-frame {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  background: #0d1210;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+  .btw-studio-frame {
+    height: 350px;
+  }
+}
+
+.btw-img-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.btw-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(40%) contrast(1.1) brightness(0.85);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btw-studio-frame:hover .btw-hero-img {
+  transform: scale(1.03);
+}
+
+.btw-frame-overlay-text {
+  position: absolute;
+  bottom: 25px;
+  left: 30px;
+  right: 30px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  font-weight: 600;
+  color: rgba(243, 239, 230, 0.8);
+  pointer-events: none;
+  z-index: 2;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+@media (max-width: 600px) {
+  .btw-frame-overlay-text {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+/* Bottom Tech Specs Grid */
+.btw-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 50px;
+}
+
+@media (max-width: 900px) {
+  .btw-specs-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+}
+
+.btw-meta-col .spec-label {
+  display: block;
+  font-size: 11px;
+  font-family: monospace;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.btw-meta-col h4 {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  margin: 0 0 10px 0;
+  color: var(--text-main);
+}
+
+.btw-meta-col p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin: 0;
+}

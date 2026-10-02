@@ -1,0 +1,745 @@
+/* =========================================================
+   CONTACT SECTION BASE
+   ========================================================= */
+
+.btw-contact {
+  --contact-bg: #0b100e;
+  --contact-surface: #101713;
+  --contact-surface-soft: #121a15;
+
+  --contact-white: #f4efe6;
+  --contact-muted: #c4d0c8;
+  --contact-soft: rgba(244, 239, 230, 0.75);
+  --contact-faint: rgba(244, 239, 230, 0.4);
+
+  --contact-line: rgba(244, 239, 230, 0.15);
+  --contact-line-strong: rgba(244, 239, 230, 0.25);
+
+  --contact-accent: #d9e2dc;
+  --contact-green: #77847d;
+
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(119, 132, 125, 0.1),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 8% 75%,
+      rgba(119, 132, 125, 0.06),
+      transparent 28%
+    ),
+    var(--contact-bg);
+
+  color: var(--contact-white);
+}
+
+
+/* =========================================================
+   BACKGROUND ORBS
+   ========================================================= */
+
+.btw-contact-orb {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -3;
+  filter: blur(110px);
+}
+
+.btw-contact-orb-one {
+  top: -260px;
+  right: -220px;
+  background: #718078;
+  opacity: 0.12;
+}
+
+.btw-contact-orb-two {
+  bottom: -300px;
+  left: -260px;
+  background: #53625a;
+  opacity: 0.1;
+}
+
+
+/* =========================================================
+   GRID BACKGROUND
+   ========================================================= */
+
+.btw-contact-grid-lines {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image:
+    linear-gradient(
+      90deg,
+      transparent 0,
+      transparent calc(50% - 0.5px),
+      rgba(244, 239, 230, 0.045) 50%,
+      transparent calc(50% + 0.5px),
+      transparent 100%
+    ),
+    linear-gradient(
+      rgba(244, 239, 230, 0.025) 1px,
+      transparent 1px
+    );
+  background-size: 100% 100%, 100% 90px;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.btw-contact-container {
+  width: min(1500px, 90vw);
+  margin: 0 auto;
+  padding: 150px 0 95px;
+}
+
+
+/* =========================================================
+   TOP
+   ========================================================= */
+
+.btw-contact-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 65px;
+  color: var(--contact-soft);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.btw-contact-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btw-contact-line {
+  position: relative;
+  width: 40px;
+  height: 1px;
+  background: var(--contact-green);
+}
+
+.btw-contact-line::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--contact-accent);
+  transform: translateY(-50%);
+}
+
+.btw-contact-index {
+  color: rgba(244, 239, 230, 0.4);
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.btw-contact-main {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 110px;
+  align-items: end;
+  padding-bottom: 85px;
+  border-bottom: 1px solid var(--contact-line);
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.btw-contact-heading {
+  min-width: 0;
+}
+
+.btw-contact-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 21px;
+  color: rgba(244, 239, 230, 0.6);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.btw-contact-kicker i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--contact-green);
+}
+
+.btw-contact-heading h2 {
+  margin: 0;
+  max-width: 900px;
+  color: var(--contact-white);
+  font-size: clamp(52px, 6vw, 84px);
+  font-weight: 450;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.btw-contact-heading h2 em {
+  color: var(--contact-green);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.04em;
+}
+
+
+/* =========================================================
+   SIDE CONTENT
+   ========================================================= */
+
+.btw-contact-side {
+  max-width: 430px;
+  padding-bottom: 4px;
+}
+
+.btw-contact-side-label {
+  display: block;
+  margin-bottom: 17px;
+  color: rgba(244, 239, 230, 0.5);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.btw-contact-side p {
+  margin: 0;
+  color: var(--contact-muted);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.btw-contact-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 27px;
+  color: rgba(244, 239, 230, 0.65);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.btw-contact-status i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #8da995;
+  box-shadow:
+    0 0 0 4px rgba(141, 169, 149, 0.12),
+    0 0 16px rgba(141, 169, 149, 0.4);
+}
+
+
+/* =========================================================
+   MAIN EMAIL CTA
+   ========================================================= */
+
+.btw-contact-cta-wrap {
+  margin-top: 55px;
+}
+
+.btw-contact-cta {
+  position: relative;
+  display: grid;
+  grid-template-columns: 140px 1fr 50px;
+  align-items: center;
+  min-height: 110px;
+  padding: 0 32px;
+  color: var(--contact-white);
+  background: rgba(16, 23, 19, 0.78);
+  border: 1px solid var(--contact-line);
+  text-decoration: none;
+  overflow: hidden;
+  transition:
+    border-color 0.4s ease,
+    background-color 0.4s ease,
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btw-contact-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(119, 132, 125, 0.12),
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.btw-contact-cta:hover {
+  transform: translateY(-4px);
+  border-color: rgba(244, 239, 230, 0.3);
+  background: rgba(18, 26, 21, 0.95);
+}
+
+.btw-contact-cta:hover::before {
+  opacity: 1;
+}
+
+.btw-contact-cta-small {
+  position: relative;
+  z-index: 2;
+  color: rgba(244, 239, 230, 0.55);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.btw-contact-cta-email {
+  position: relative;
+  z-index: 2;
+  color: var(--contact-white);
+  font-size: clamp(20px, 2.3vw, 32px);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+
+.btw-contact-cta-arrow {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--contact-accent);
+  border: 1px solid rgba(244, 239, 230, 0.2);
+  border-radius: 50%;
+  font-size: 18px;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btw-contact-cta:hover .btw-contact-cta-arrow {
+  color: var(--contact-bg);
+  background: var(--contact-accent);
+  transform: translate(4px, -4px);
+}
+
+
+/* =========================================================
+   QUICK CONTACT OPTIONS
+   ========================================================= */
+
+.btw-contact-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 20px;
+  border-top: 1px solid var(--contact-line);
+  border-bottom: 1px solid var(--contact-line);
+}
+
+.btw-contact-option {
+  position: relative;
+  display: grid;
+  grid-template-columns: 45px 1fr 35px;
+  align-items: center;
+  min-height: 110px;
+  padding: 0 25px;
+  color: var(--contact-white);
+  text-decoration: none;
+  border-right: 1px solid var(--contact-line);
+  overflow: hidden;
+  transition:
+    background-color 0.4s ease,
+    padding 0.4s ease;
+}
+
+.btw-contact-option:last-child {
+  border-right: none;
+}
+
+.btw-contact-option::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--contact-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btw-contact-option:hover {
+  background: rgba(244, 239, 230, 0.03);
+  padding-left: 30px;
+}
+
+.btw-contact-option:hover::before {
+  transform: scaleX(1);
+}
+
+.btw-contact-option-number {
+  align-self: start;
+  padding-top: 28px;
+  color: rgba(244, 239, 230, 0.45);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.btw-contact-option-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.btw-contact-option-content small {
+  color: rgba(244, 239, 230, 0.5);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.btw-contact-option-content strong {
+  color: rgba(244, 239, 230, 0.9);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.3s ease;
+}
+
+.btw-contact-option:hover .btw-contact-option-content strong {
+  color: #fff;
+}
+
+.btw-contact-option-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: var(--contact-green);
+  border: 1px solid rgba(244, 239, 230, 0.15);
+  border-radius: 50%;
+  font-size: 14px;
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btw-contact-option:hover .btw-contact-option-arrow {
+  color: var(--contact-bg);
+  background: var(--contact-accent);
+  transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   BOTTOM
+   ========================================================= */
+
+.btw-contact-bottom {
+  display: grid;
+  grid-template-columns: 240px 1fr auto;
+  align-items: center;
+  gap: 35px;
+  margin-top: 70px;
+  color: rgba(244, 239, 230, 0.5);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.btw-contact-bottom-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btw-contact-bottom-number {
+  color: rgba(244, 239, 230, 0.7);
+  font-size: 12px;
+}
+
+.btw-contact-bottom-left > span:last-child {
+  line-height: 1.6;
+}
+
+.btw-contact-bottom-line {
+  height: 1px;
+  background: var(--contact-line);
+}
+
+.btw-contact-bottom-right {
+  color: rgba(244, 239, 230, 0.4);
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   FOCUS STATES
+   ========================================================= */
+
+.btw-contact-cta:focus-visible,
+.btw-contact-option:focus-visible {
+  outline: 1px solid var(--contact-accent);
+  outline-offset: 6px;
+}
+
+
+/* =========================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================= */
+
+@media (max-width: 950px) {
+  .btw-contact-container {
+    width: 88vw;
+    padding: 125px 0 80px;
+  }
+
+  .btw-contact-main {
+    gap: 60px;
+  }
+
+  .btw-contact-heading h2 {
+    font-size: clamp(48px, 6.5vw, 72px);
+  }
+
+  .btw-contact-options {
+    grid-template-columns: 1fr;
+  }
+
+  .btw-contact-option {
+    border-right: none;
+    border-bottom: 1px solid var(--contact-line);
+  }
+
+  .btw-contact-option:last-child {
+    border-bottom: none;
+  }
+
+  .btw-contact-bottom {
+    grid-template-columns: 200px 1fr;
+  }
+
+  .btw-contact-bottom-right {
+    grid-column: 2;
+    text-align: right;
+  }
+}
+
+@media (max-width: 700px) {
+  .btw-contact-container {
+    width: 90vw;
+    padding: 95px 0 65px;
+  }
+
+  .btw-contact-orb {
+    width: 300px;
+    height: 300px;
+    filter: blur(80px);
+  }
+
+  .btw-contact-top {
+    margin-bottom: 42px;
+    font-size: 11px;
+  }
+
+  .btw-contact-line {
+    width: 30px;
+  }
+
+  .btw-contact-main {
+    display: block;
+    padding-bottom: 48px;
+  }
+
+  .btw-contact-kicker {
+    margin-bottom: 17px;
+    font-size: 11px;
+  }
+
+  .btw-contact-heading h2 {
+    font-size: clamp(38px, 11vw, 56px);
+    line-height: 0.98;
+  }
+
+  .btw-contact-side {
+    max-width: 100%;
+    margin-top: 38px;
+  }
+
+  .btw-contact-side-label {
+    font-size: 11px;
+  }
+
+  .btw-contact-side p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .btw-contact-status {
+    margin-top: 22px;
+    font-size: 11px;
+  }
+
+  .btw-contact-cta-wrap {
+    margin-top: 35px;
+  }
+
+  .btw-contact-cta {
+    grid-template-columns: 1fr 40px;
+    min-height: 105px;
+    padding: 20px;
+  }
+
+  .btw-contact-cta-small {
+    grid-column: 1 / -1;
+    margin-bottom: 8px;
+  }
+
+  .btw-contact-cta-email {
+    font-size: 18px;
+    word-break: break-word;
+  }
+
+  .btw-contact-options {
+    margin-top: 14px;
+  }
+
+  .btw-contact-option {
+    grid-template-columns: 35px 1fr 32px;
+    min-height: 90px;
+    padding: 0 18px;
+  }
+
+  .btw-contact-option:hover {
+    padding-left: 22px;
+  }
+
+  .btw-contact-option-number {
+    padding-top: 24px;
+  }
+
+  .btw-contact-option-content small {
+    font-size: 10px;
+  }
+
+  .btw-contact-option-content strong {
+    font-size: 14px;
+  }
+
+  .btw-contact-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    margin-top: 48px;
+    font-size: 11px;
+  }
+
+  .btw-contact-bottom-line {
+    width: 100%;
+  }
+
+  .btw-contact-bottom-right {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 380px) {
+  .btw-contact-container {
+    width: 91vw;
+  }
+
+  .btw-contact-heading h2 {
+    font-size: 36px;
+  }
+
+  .btw-contact-cta-email {
+    font-size: 15px;
+  }
+
+  .btw-contact-option-content strong {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION & TOUCH DEVICES
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .btw-contact *,
+  .btw-contact *::before,
+  .btw-contact *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media (hover: none) {
+  .btw-contact-cta:hover {
+    transform: none;
+  }
+
+  .btw-contact-cta:hover::before {
+    opacity: 0;
+  }
+
+  .btw-contact-option:hover {
+    padding-left: 25px;
+    background: transparent;
+  }
+
+  .btw-contact-option:hover::before {
+    transform: scaleX(0);
+  }
+
+  .btw-contact-option:hover .btw-contact-option-arrow,
+  .btw-contact-cta:hover .btw-contact-cta-arrow {
+    background: transparent;
+    transform: none;
+  }
+}
