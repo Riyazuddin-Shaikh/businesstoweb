@@ -8,7 +8,7 @@ import Navbar from "@/app/components/navbar/Navbar";
 import Footer from "@/app/components/Footer/footer";
 import BackToTop from "@/app/components/BackToTop/BackToTop";
 import ScrollHandler from "@/app/components/ScrollHandler"; 
-import ContactPopup from "@/app/components/Popup/ContactPopup"; // <-- Sahi path
+import ContactPopup from "@/app/components/Popup/ContactPopup";
 // ==================== GLOBAL COMPONENTS IMPORT END ====================
 
 const geistSans = Geist({
@@ -21,10 +21,32 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// ==================== COMPLETE SEO METADATA ====================
 export const metadata = {
-  title: "BusinessToWeb — We Build Websites That Grow Your Business",
+  title: {
+    default: "BusinessToWeb — We Build Websites That Grow Your Business",
+    template: "%s | BusinessToWeb",
+  },
   description:
-    "Modern, high-converting websites for professional businesses.",
+    "Get professional, fast, and high-converting websites for your business. Leading web design & development agency for modern businesses.",
+  keywords: [
+    "BusinessToWeb",
+    "Web Design Agency",
+    "Website Development",
+    "Next.js Developer",
+    "Business Websites",
+  ],
+  openGraph: {
+    title: "BusinessToWeb — We Build Websites That Grow Your Business",
+    description:
+      "Modern, fast, and high-converting websites for professional businesses.",
+    siteName: "BusinessToWeb",
+    type: "website",
+  },
+  // Google Search Console Verification
+  verification: {
+    google: "oqCL955PO6UozcB_IBX-k4FGqGPhUGPTL8nv3B1Kokc",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -34,33 +56,14 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
       <body>
-        {/* ==================== LAYOUT UI & COMPONENTS START ==================== */}
-        
-        {/* Refresh ya page change hone par top par le jaane ke liye */}
         <ScrollHandler />
-
-        {/* Page loading animation */}
         <Preloader />
-
-        {/* Top Navigation Bar */}
         <Navbar />
-
-        {/* Yahan par aapka current page render hoga */}
         {children}
-
-        {/* Custom Mouse Cursor */}
         <HoverCursor />
-
-        {/* Footer Section */}
         <Footer />
-
-        {/* Scroll to Top Button */}
         <BackToTop />
-
-        {/* Website load hone ke 15 seconds baad aane wala Contact Popup */}
         <ContactPopup />
-
-        {/* ==================== LAYOUT UI & COMPONENTS END ==================== */}
       </body>
     </html>
   );
